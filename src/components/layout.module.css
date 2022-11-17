@@ -8,14 +8,31 @@
     color: rebeccapurple;
 }
 
+
+.nav-bar {
+    display: flex;
+    list-style: none;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
     padding-left: 0;
 }
 .nav-link-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    top: 0;
     padding-right: 2rem;
 }
 .nav-link-text {
     color: black;
 }
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
