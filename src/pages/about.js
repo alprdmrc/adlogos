@@ -1,10 +1,34 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
+import Seo from "../components/seo"
+import { StaticImage } from "gatsby-plugin-image"
 
 const AboutPage = () => {
+    const data = useStaticQuery(graphql`
+    query {
+      allAirtable {
+        edges {
+          node {
+            data {
+              Name
+            }
+          }
+        }
+      }
+    }
+    `) 
     return (
         <Layout pageTitle="About Adlogos">
+            {data.allAirtable.edges.map(item=>{
+                return (
+                    <div>
+                        <h2>{item.node.data.Name}</h2>
+                        {/* <p>{item.node.data.Files[0].filename}</p>
+                        <img src={item.node.data.Files[0].url} /> */}
+                    </div>
+                )
+            })}
             <p>Lorem ipsum dolor sit amet, 
                 consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt 
@@ -19,6 +43,6 @@ const AboutPage = () => {
     )
 }
 
-export const Head = () => <title>About Logos</title>
+export const Head = () => <Seo title="About" />
 
 export default AboutPage
