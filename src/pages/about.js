@@ -20,15 +20,15 @@ const AboutPage = () => {
     `) 
     return (
         <Layout pageTitle="About Adlogos">
-            {data.allAirtable.edges.map(item=>{
+            {/* {data.allAirtable.edges.map(item=>{
                 return (
                     <div>
                         <h2>{item.node.data.Name}</h2>
-                        {/* <p>{item.node.data.Files[0].filename}</p>
-                        <img src={item.node.data.Files[0].url} /> */}
+                        <p>{item.node.data.Files[0].filename}</p>
+                        <img src={item.node.data.Files[0].url} />
                     </div>
                 )
-            })}
+            })} */}
             <p>Lorem ipsum dolor sit amet, 
                 consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt 
